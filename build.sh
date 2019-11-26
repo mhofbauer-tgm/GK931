@@ -60,8 +60,8 @@ function gencert() {
 	DNAME="${DNAME:-CN=cas.example.org,OU=Example,OU=Org,C=US}"
 	CERT_SUBJ_ALT_NAMES="${CERT_SUBJ_ALT_NAMES:-dns:example.org,dns:localhost,ip:127.0.0.1}"
 	echo "Generating keystore for CAS with DN ${DNAME}"
-	keytool -genkeypair -alias cas -keyalg RSA -keypass changeit -storepass changeit -keystore /etc/cas/thekeystore -dname ${DNAME} -ext SAN=${CERT_SUBJ_ALT_NAMES}
-	keytool -exportcert -alias cas -storepass changeit -keystore /etc/cas/thekeystore -file /etc/cas/cas.cer
+	keytool -genkeypair -alias cas -keyalg RSA -keypass changeit -storepass changeit -thekeystore /etc/cas/thekeystore -dname ${DNAME} -ext SAN=${CERT_SUBJ_ALT_NAMES}
+	keytool -exportcert -alias cas -storepass changeit -thekeystore /etc/cas/thekeystore -file /etc/cas/cas.cer
 }
 
 function cli() {
