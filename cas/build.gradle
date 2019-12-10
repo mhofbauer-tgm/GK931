@@ -52,6 +52,7 @@ repositories {
 }
 
 dependencies {
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
     compile "org.apereo.cas:cas-server-webapp-tomcat:${project.'cas.version'}@war"
     if (!project.hasProperty('bootiful')) {
         // Other dependencies may be listed here...
